@@ -1,0 +1,38 @@
+<launch>
+  <arg name="human_model" default="human_gazebo_shkey_2"/>
+  <arg name="rviz_config" value="$(find patient_robot_sim)/config/multi_agent.rviz"/>
+
+  <!-- Human controller (PyBullet or control-only) -->
+  <node name="human_sim_node" pkg="patient_robot_sim" type="human_sim_node.py" output="screen">
+    <param name="pybullet_gui" value="false"/>
+    <param name="human_urdf" value="$(arg human_model)"/>
+    <param name="rate" value="1000"/>
+  </node>
+
+  <!-- Human state publisher (namespaced) -->
+  <param name="human_description" textfile="$(find patient_robot_sim)/agents/$(arg human_model).urdf"/>
+  <group ns="human">
+    <!-- robot_state_publisher expects 'robot_description' -->
+    <node name="state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
+      <remap from="joint_states" to="/human/joint_states"/>
+      <remap from="robot_description" to="human_description"/>
+    </node>
+  </group>
+  <!-- Add if using Gazebo: -->
+  <!-- <node name="spawn_urdf_human" pkg="gazebo_ros" type="spawn_model" args="-urdf -model $(arg robot_name) -x 0 -y 0 -z 0 -param human_description" /> -->
+
+  <!-- Robot (iiwa) Gazebo + RViz bundle -->
+  <include file="$(find iiwa_interactive_controller)/launch/modular_passive_gazebo.launch"/>
+
+  <!-- Static TFs -->
+  <node pkg="tf" type="static_transform_publisher" name="robot_base_broadcaster"
+      args="0 0 0 0 0 0 1 world iiwa_base 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="human_base_broadcaster"
+        args="0.9 0.6 0.1 0 0 -0.707 0.707 world Pelvis 100"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_mocap_world"
+      args="4.412012100219727 0.9080005288124084 0.36225974559783936 -0.0013881974155083299 0.7082833647727966 0.7059269547462463 0.00012832369247917086 mocap_world world" />
+
+  <!-- RViz -->
+  <node name="robot_human_rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)"  />
+
+</launch>

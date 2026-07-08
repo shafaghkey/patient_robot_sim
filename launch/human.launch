@@ -1,0 +1,26 @@
+<launch>
+  <arg name="gui" default="true"/>
+  <arg name="human_model" default="human_gazebo_shkey_2"/>
+  <arg name="rviz_config" value="$(find patient_robot_sim)/config/human_config.rviz"/>
+
+  <!-- <node name="human_sim" pkg="patient_robot_sim" type="human_sim_node.py" output="screen">
+    <param name="pybullet_gui" value="$(arg gui)"/>
+    <param name="human_urdf" value="$(arg human_model)"/>
+    <param name="rate" value="500"/>
+  </node> -->
+
+  <group ns="human">
+    <param name="robot_description" textfile="$(find patient_robot_sim)/agents/$(arg human_model).urdf"/>
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="state_publisher" output="screen">
+      <remap from="joint_states" to="/human/joint_states"/>
+    </node>
+  </group>
+
+  <node pkg="tf" type="static_transform_publisher" name="human_base_broadcaster"
+        args="0 0 0.5 0 0 0 1 world Pelvis 100"/>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_mocap_world"
+      args="4.412012100219727 0.9080005288124084 0.36225974559783936 -0.0013881974155083299 0.7082833647727966 0.7059269547462463 0.00012832369247917086 mocap_world world" />
+
+  <node name="robot_human_rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)"  />
+</launch>

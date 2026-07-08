@@ -1,0 +1,73 @@
+<launch>
+  <arg name="human_model" default="human_gazebo_shkey_upper"/>
+  <arg name="rviz_config" value="$(find patient_robot_sim)/config/multi_agent.rviz"/>
+  <arg name="mocap" default="true"/>
+
+  <!-- Human controller (PyBullet or control-only) -->
+  <node name="human_publisher" pkg="patient_robot_sim" type="human_publisher.py" output="screen">
+    <param name="pybullet_gui" value="false"/>
+    <param name="human_urdf" value="$(arg human_model)"/>
+    <param name="mocap" value="$(arg mocap)"/>
+  </node>
+
+  <!-- Human state publisher (namespaced) -->
+  <param name="human_description" textfile="$(find patient_robot_sim)/agents/$(arg human_model).urdf"/>
+  <group ns="human">
+    <!-- robot_state_publisher expects 'robot_description' -->
+    <node name="state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
+      <remap from="joint_states" to="/human/joint_states"/>
+      <remap from="robot_description" to="human_description"/>
+    </node>
+  </group>
+
+  <!-- RViz-friendly: also expose the human URDF as a global parameter (RobotModel can point here) -->
+  <param name="human_robot_description" textfile="$(find patient_robot_sim)/agents/$(arg human_model).urdf"/>
+  <!-- Add if using Gazebo: -->
+  <!-- <node name="spawn_urdf_human" pkg="gazebo_ros" type="spawn_model" args="-urdf -model $(arg robot_name) -x 0 -y 0 -z 0 -param human_description" /> -->
+
+  <!-- Set initial joint configuration (after Gazebo spawn) -->
+  <node name="set_initial_joints" pkg="patient_robot_sim" type="set_initial_joints.py" output="screen">
+      <param name="delay_sec" value="0.5"/>
+  </node>
+
+  <!-- Robot controller -->
+  <!-- deferred: needs qpik_legacy/ik, see patient_robot_sim migration plan (Decision 2)
+  <node name="robot_controller_node" pkg="patient_robot_sim" type="check_qpik_node.py" output="screen">
+    <param name="num_robots" value="64"/>
+  </node>
+  -->
+  <!-- <node name="assist_node" pkg="patient_robot_sim" type="assist_node.py" output="screen"/> -->
+
+
+  <!-- Robot (iiwa) Gazebo -->
+  <include file="$(find iiwa_interactive_controller)/launch/modular_passive_gazebo.launch"/>
+
+  <!-- TF policy:
+    - mocap:=false  -> publish a predefined world -> Pelvis transform.
+    - mocap:=true   -> Pelvis is driven by the mocap chain; publish fullbody -> Pelvis as identity
+            (so fullbody and Pelvis coincide), plus a fixed world <-> mocap_world alignment. -->
+
+  <!-- if mocap = false, transformation from world to Pelvis (predefined) -->
+  <node if="$(eval not arg('mocap'))" pkg="tf" type="static_transform_publisher" name="human_base_broadcaster"
+    args="0.9 0.6 0.1 0 0 -0.707 0.707 world Pelvis 100"/>
+
+  <!-- if mocap = true, transformation from fullbody to Pelvis (identity; same frame) -->
+  <!-- <node if="$(arg mocap)" pkg="tf2_ros" type="static_transform_publisher" name="fullbody_to_human_base"
+    args="0.0 0.0 0.0 0.0 0.0 0.0 1 fullbody Pelvis" /> -->
+
+  <!-- <node if="$(arg mocap)" pkg="tf2_ros" type="static_transform_publisher" name="world_to_mocap_world"
+    args="4.412012100219727 0.9080005288124084 0.36225974559783936 -0.0013881974155083299 0.7082833647727966 0.7059269547462463 0.00012832369247917086 mocap_world world" /> -->
+  <node if="$(arg mocap)" pkg="tf2_ros" type="static_transform_publisher" name="world_to_mocap_world"
+    args="0.0 0.0 0.0 0.0 0.0 0.0 1 sk/iiwa_base world" />
+
+  <!-- When mocap is enabled, fullbody and Pelvis coincide -->
+  <node if="$(arg mocap)" pkg="tf2_ros" type="static_transform_publisher" name="fullbody_to_pelvis"
+    args="0 0 0 0 0 0 1 fullbody Pelvis"  />
+
+  
+  
+
+  <!-- RViz -->
+  <node name="robot_human_rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)"  />
+
+</launch>

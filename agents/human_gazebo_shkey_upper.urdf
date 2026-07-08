@@ -1,0 +1,1158 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot name="HumanModel">
+  <link name="Pelvis">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="7.098"/>
+      <inertia ixx="0.072762100775" ixy="0.0" ixz="0.0" iyy="0.028514890039999997" iyz="0.0" izz="0.080476585735"/>
+    </inertial>
+    <visual name="Pelvis">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/Pelvis.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <visual name="Pelvis_RightRecAbd">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/Pelvis_RightRecAbd.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <visual name="Pelvis_RightErcSpin">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/Pelvis_RightErcSpin.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <visual name="Pelvis_LeftRecAbd">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/Pelvis_LeftRecAbd.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <visual name="Pelvis_LeftErcSpin">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/Pelvis_LeftErcSpin.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.175  0.3247 0.1326"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="LowerTrunk_f1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="LowerTrunk">
+    <inertial>
+      <origin xyz="0.0 0.0 0.085" rpy="0.0 0.0 0.0"/>
+      <mass value="9.294"/>
+      <inertia ixx="0.09014997218" ixy="0.0" ixz="0.0" iyy="0.04610211250000001" iyz="0.0" izz="0.09148598468"/>
+    </inertial>
+    <visual name="LowerTrunk">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LowerTrunk.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.085" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <visual name="LowerTrunk_RightRecAbd">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LowerTrunk_RightRecAbd.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.085" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <visual name="LowerTrunk_RightErcSpin">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LowerTrunk_RightErcSpin.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.085" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <visual name="LowerTrunk_LefttRecAbd">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LowerTrunk_LefttRecAbd.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.085" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <visual name="LowerTrunk_LeftErcSpin">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LowerTrunk_LeftErcSpin.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.085" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.175  0.2958 0.17  "/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.085" rpy="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="UpperTrunk_f1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="UpperTrunk_f2">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="UpperTrunk">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0935" rpy="0.0 0.0 0.0"/>
+      <mass value="3.138"/>
+      <inertia ixx="0.014777222337222225" ixy="0.0" ixz="0.0" iyy="0.017152831" iyz="0.0" izz="0.013641266337222223"/>
+    </inertial>
+    <visual name="UpperTrunk">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/UpperTrunk.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.0935" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <visual name="UpperTrunk_RightRecAbd">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/UpperTrunk_RightRecAbd.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.0935" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <visual name="UpperTrunk_RightErcSpin">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/UpperTrunk_RightErcSpin.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.0935" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <visual name="UpperTrunk_LeftRecAbd">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/UpperTrunk_LeftRecAbd.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.0935" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <visual name="UpperTrunk_LeftErcSpin">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/UpperTrunk_LeftErcSpin.stl" scale="0.58333333 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.0935" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.175      0.14676667 0.187     "/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0935" rpy="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="RightShoulder">
+    <inertial>
+      <origin xyz="0.0 -0.07338333333333334 0.0" rpy="1.5708 0.0 0.0"/>
+      <mass value="3.138"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual name="RightShoulder">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/RightShoulder.stl" scale="0.64444444 0.64444444 1.03030303"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 -0.07338333333333334 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.029" length="0.14676666666666668"/>
+      </geometry>
+      <origin xyz="0.0 -0.07338333333333334 0.0" rpy="1.5708 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="LeftShoulder">
+    <inertial>
+      <origin xyz="0.0 0.07338333333333334 0.0" rpy="1.5708 0.0 0.0"/>
+      <mass value="3.138"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual name="LeftShoulder">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LeftShoulder.stl" scale="0.64444444 0.64444444 1.03030303"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.07338333333333334 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.029" length="0.14676666666666668"/>
+      </geometry>
+      <origin xyz="0.0 0.07338333333333334 0.0" rpy="1.5708 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="Neck_f1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="Neck_f2">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="Neck">
+    <inertial>
+      <origin xyz="0.0 0.0 0.044199999999999996" rpy="0.0 0.0 0.0"/>
+      <mass value="1.1640000000000001"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual name="Neck">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/Neck.stl" scale="0.73076923 0.73076923 1.03030303"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.044199999999999996" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.0475" length="0.08839999999999999"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.044199999999999996" rpy="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="Head_f1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="Head">
+    <inertial>
+      <origin xyz="0.0 0.0 0.1105" rpy="0.0 0.0 0.0"/>
+      <mass value="2.922"/>
+      <inertia ixx="0.014271340200000001" ixy="0.0" ixz="0.0" iyy="0.014271340200000001" iyz="0.0" izz="0.014271340200000001"/>
+    </inertial>
+    <visual name="Head">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/Head.stl" scale="1.03030303 1.03030303 1.03030303"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.0 0.1105" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.1105"/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.1105" rpy="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="RightShoulder_f1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="RightShoulder_f2">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="RightUpperArm">
+    <inertial>
+      <origin xyz="0.0 -0.1581 0.0" rpy="1.5708 0.0 0.0"/>
+      <mass value="1.578"/>
+      <inertia ixx="0.013479465359999998" ixy="0.0" ixz="0.0" iyy="0.013479465359999998" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual name="RightUpperArm">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/RightUpperArm.stl" scale="0.64444444 0.64444444 1.03030303"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 -0.1581 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <visual name="RightTricBrac">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/RightTricBrac.stl" scale="0.64444444 0.64444444 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 -0.1581 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <visual name="RightBicBrac">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/RightBicBrac.stl" scale="0.64444444 0.64444444 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 -0.1581 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.029" length="0.3162"/>
+      </geometry>
+      <origin xyz="0.0 -0.1581 0.0" rpy="1.5708 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="RightForeArm_f1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="RightForeArm">
+    <inertial>
+      <origin xyz="0.0 -0.12409999999999999 0.0" rpy="1.5708 0.0 0.0"/>
+      <mass value="0.8999999999999999"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual name="RightForeArm">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/RightForeArm.stl" scale="0.61111111 0.61111111 1.03030303"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 -0.12409999999999999 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <visual name="RightFlexCarp">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/RightFlexCarp.stl" scale="0.61111111 0.61111111 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 -0.12409999999999999 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <visual name="RightExtCarp">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/RightExtCarp.stl" scale="0.61111111 0.61111111 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 -0.12409999999999999 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.0275" length="0.24819999999999998"/>
+      </geometry>
+      <origin xyz="0.0 -0.12409999999999999 0.0" rpy="1.5708 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="RightHand_f1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="RightHand">
+    <inertial>
+      <origin xyz="0.0 -0.09179999999999999 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.354"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual name="RightHand">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/RightHand.stl" scale="0.9        1.03030303 0.55555556"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 -0.09179999999999999 0.0" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.072  0.1836 0.025 "/>
+      </geometry>
+      <origin xyz="0.0 -0.09179999999999999 0.0" rpy="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="RightHandCOM">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0. 0. 0."/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </visual>
+  </link>
+  <link name="LeftShoulder_f1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="LeftShoulder_f2">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="LeftUpperArm">
+    <inertial>
+      <origin xyz="0.0 0.1581 0.0" rpy="1.5708 0.0 0.0"/>
+      <mass value="1.578"/>
+      <inertia ixx="0.013479465359999998" ixy="0.0" ixz="0.0" iyy="0.013479465359999998" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual name="LeftUpperArm">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LeftUpperArm.stl" scale="0.64444444 0.64444444 1.03030303"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.1581 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <visual name="LeftTricBrac">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LeftTricBrac.stl" scale="0.64444444 0.64444444 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.1581 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <visual name="LeftBicBrac">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LeftBicBrac.stl" scale="0.64444444 0.64444444 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.1581 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.029" length="0.3162"/>
+      </geometry>
+      <origin xyz="0.0 0.1581 0.0" rpy="1.5708 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="LeftForeArm_f1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="LeftForeArm">
+    <inertial>
+      <origin xyz="0.0 0.12409999999999999 0.0" rpy="1.5708 0.0 0.0"/>
+      <mass value="0.8999999999999999"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual name="LeftForeArm">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LeftForeArm.stl" scale="0.61111111 0.61111111 1.03030303"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.12409999999999999 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <visual name="LeftFlexCarp">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LeftFlexCarp.stl" scale="0.61111111 0.61111111 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.12409999999999999 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <visual name="LeftExtCarp">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LeftExtCarp.stl" scale="0.61111111 0.61111111 1.03030303"/>
+      </geometry>
+      <material name="muscle">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.12409999999999999 0.0" rpy="1.5708 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.0275" length="0.24819999999999998"/>
+      </geometry>
+      <origin xyz="0.0 0.12409999999999999 0.0" rpy="1.5708 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="LeftHand_f1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="LeftHand">
+    <inertial>
+      <origin xyz="0.0 0.09179999999999999 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.354"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual name="LeftHand">
+      <geometry>
+        <mesh filename="package://human-gazebo/meshes/LeftHand.stl" scale="0.9        1.03030303 0.55555556"/>
+      </geometry>
+      <material name="Link">
+        <color rgba="0.9922 0.8667 0.7922 1.    "/>
+      </material>
+      <origin xyz="0.0 0.09179999999999999 0.0" rpy="0.0 0.0 0.0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.072  0.1836 0.025 "/>
+      </geometry>
+      <origin xyz="0.0 0.09179999999999999 0.0" rpy="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="LeftHandCOM">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1e-05"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0. 0. 0."/>
+      </geometry>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </visual>
+  </link>
+  
+  <link name="BicBrac_RUA">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="BicBrac_RFA">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="TricBrac_RUA">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="TricBrac_RFA">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="FlexCarp_RFA">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="FlexCarp_RH">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="ExtCarp_RFA">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="ExtCarp_RH">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="BicBrac_LUA">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="BicBrac_LFA">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="TricBrac_LUA">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="TricBrac_LFA">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="FlexCarp_LFA">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="FlexCarp_LH">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="ExtCarp_LFA">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="ExtCarp_LH">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="RecAbd_RUT">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="RecAbd_RP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="ErSpin_RUT">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="ErSpin_RP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="RecAbd_LUT">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="RecAbd_LP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="ErSpin_LUT">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+  <link name="ErSpin_LP">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+
+  
+  <joint name="jL5S1_rotx" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.610865" upper="0.610865"/>
+    <parent link="Pelvis"/>
+    <child link="LowerTrunk_f1"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0663" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jL5S1_roty" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.523599" upper="1.309"/>
+    <parent link="LowerTrunk_f1"/>
+    <child link="LowerTrunk"/>
+    <axis xyz="0. 1. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jT9T8_rotx" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.349066" upper="0.349066"/>
+    <parent link="LowerTrunk"/>
+    <child link="UpperTrunk_f1"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.17" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jT9T8_roty" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.261799" upper="0.698132"/>
+    <parent link="UpperTrunk_f1"/>
+    <child link="UpperTrunk_f2"/>
+    <axis xyz="0. 1. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jT9T8_rotz" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.610865" upper="0.610865"/>
+    <parent link="UpperTrunk_f2"/>
+    <child link="UpperTrunk"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jC7RightShoulder_rotx" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.785398" upper="0.0872665"/>
+    <parent link="UpperTrunk"/>
+    <child link="RightShoulder"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 -0.07338333333333334 0.158" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jC7LeftShoulder_rotx" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.0872665" upper="0.785398"/>
+    <parent link="UpperTrunk"/>
+    <child link="LeftShoulder"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.07338333333333334 0.158" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jT1C7_rotx" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.610865" upper="0.610865"/>
+    <parent link="UpperTrunk"/>
+    <child link="Neck_f1"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.187" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jT1C7_roty" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.959931" upper="1.5708"/>
+    <parent link="Neck_f1"/>
+    <child link="Neck_f2"/>
+    <axis xyz="0. 1. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jT1C7_rotz" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-1.22173" upper="1.22173"/>
+    <parent link="Neck_f2"/>
+    <child link="Neck"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jC1Head_rotx" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.610865" upper="0.610865"/>
+    <parent link="Neck"/>
+    <child link="Head_f1"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.08839999999999999" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jC1Head_roty" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.436332" upper="0.174533"/>
+    <parent link="Head_f1"/>
+    <child link="Head"/>
+    <axis xyz="0. 1. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  
+  <joint name="jRightShoulder_rotz" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.785398" upper="3.14159"/>
+    <parent link="RightShoulder"/>
+    <child link="RightShoulder_f1"/>
+    <axis xyz="0. 0. 1."/>
+    <!-- <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> -->
+    <origin xyz="0.0 -0.14676666666666668 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightShoulder_rotx" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-1.5708" upper="2.35619"/>
+    <parent link="RightShoulder_f1"/>
+    <child link="RightShoulder_f2"/>
+    <axis xyz="-1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <!-- <origin xyz="0.0 -0.14676666666666668 0.0" rpy="0.0 0.0 0.0"/> -->
+  </joint>
+  <joint name="jRightShoulder_roty" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-1.5708" upper="1.5708"/>
+    <parent link="RightShoulder_f2"/>
+    <child link="RightUpperArm"/>
+    <axis xyz="0. -1. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <!-- <joint name="jRightShoulder_rotx" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-2.35619" upper="1.5708"/>
+    <parent link="RightShoulder"/>
+    <child link="RightShoulder_f1"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 -0.14676666666666668 0.0" rpy="0.0 0.0 0.0"/>
+  </joint> -->
+  <!-- <joint name="jRightShoulder_roty" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-1.5708" upper="1.5708"/>
+    <parent link="RightShoulder_f1"/>
+    <child link="RightShoulder_f2"/>
+    <axis xyz="0. 1. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint> -->
+  <!-- <joint name="jRightShoulder_rotz" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.785398" upper="3.14159"/>
+    <parent link="RightShoulder_f2"/>
+    <child link="RightUpperArm"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint> -->
+  <joint name="jRightElbow_rotz" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="0.0" upper="2.53073"/>
+    <parent link="RightUpperArm"/>
+    <child link="RightForeArm_f1"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 -0.3162 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightElbow_roty" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-1.5708" upper="1.48353"/>
+    <parent link="RightForeArm_f1"/>
+    <child link="RightForeArm"/>
+    <axis xyz="0. 1. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  
+  <joint name="jRightWrist_rotx" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.872665" upper="1.0472"/>
+    <parent link="RightForeArm"/>
+    <child link="RightHand_f1"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 -0.24819999999999998 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightWrist_rotz" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.523599" upper="0.349066"/>
+    <parent link="RightHand_f1"/>
+    <child link="RightHand"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightHandCOM" type="fixed">
+    <parent link="RightHand"/>
+    <child link="RightHandCOM"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 -0.09179999999999999 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftShoulder_rotx" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-1.5708" upper="2.35619"/>
+    <parent link="LeftShoulder"/>
+    <child link="LeftShoulder_f1"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.14676666666666668 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftShoulder_roty" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-1.5708" upper="1.5708"/>
+    <parent link="LeftShoulder_f1"/>
+    <child link="LeftShoulder_f2"/>
+    <axis xyz="0. 1. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftShoulder_rotz" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-3.14159" upper="0.785398"/>
+    <parent link="LeftShoulder_f2"/>
+    <child link="LeftUpperArm"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftElbow_roty" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-1.5708" upper="1.48353"/>
+    <parent link="LeftUpperArm"/>
+    <child link="LeftForeArm_f1"/>
+    <axis xyz="0. 1. 0."/>
+    <origin xyz="0.0 0.3162 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftElbow_rotz" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-2.53073" upper="0.0"/>
+    <parent link="LeftForeArm_f1"/>
+    <child link="LeftForeArm"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftWrist_rotx" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-1.0472" upper="0.872665"/>
+    <parent link="LeftForeArm"/>
+    <child link="LeftHand_f1"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.24819999999999998 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftWrist_rotz" type="revolute">
+    <dynamics damping="0.1" friction="0.0"/>
+    <limit effort="30.0" velocity="1.0" lower="-0.349066" upper="0.523599"/>
+    <parent link="LeftHand_f1"/>
+    <child link="LeftHand"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftHandCOM" type="fixed">
+    <parent link="LeftHand"/>
+    <child link="LeftHandCOM"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.09179999999999999 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  
+  <joint name="jRightBicBrac_RUA" type="fixed">
+    <parent link="RightUpperArm"/>
+    <child link="BicBrac_RUA"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="-1.775737858763662e-18 0.0 0.029" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightBicBrac_RFA" type="fixed">
+    <parent link="RightForeArm"/>
+    <child link="BicBrac_RFA"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0275 0.0 0.0275" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightTricBrac_RUA" type="fixed">
+    <parent link="RightUpperArm"/>
+    <child link="TricBrac_RUA"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="-0.029 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightTricBrac_RFA" type="fixed">
+    <parent link="RightForeArm"/>
+    <child link="TricBrac_RFA"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0275 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightFlexCarp_RFA" type="fixed">
+    <parent link="RightForeArm"/>
+    <child link="FlexCarp_RFA"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="-0.0275 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightFlexCarp_RH" type="fixed">
+    <parent link="RightHand"/>
+    <child link="FlexCarp_RH"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0144 -0.09179999999999999 0.0125" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightExtCarp_RFA" type="fixed">
+    <parent link="RightForeArm"/>
+    <child link="ExtCarp_RFA"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0275 0.0 3.367778697655221e-18" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightExtCarp_RH" type="fixed">
+    <parent link="RightHand"/>
+    <child link="ExtCarp_RH"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0144 -0.09179999999999999 -0.0125" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftBicBrac_LUA" type="fixed">
+    <parent link="LeftUpperArm"/>
+    <child link="BicBrac_LUA"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="1.775737858763662e-18 0.0 0.029" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftBicBrac_LFA" type="fixed">
+    <parent link="LeftForeArm"/>
+    <child link="BicBrac_LFA"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0275 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftTricBrac_LUA" type="fixed">
+    <parent link="LeftUpperArm"/>
+    <child link="TricBrac_LUA"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.029 0.0 3.551475717527324e-18" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftTricBrac_LFA" type="fixed">
+    <parent link="LeftForeArm"/>
+    <child link="TricBrac_LFA"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0275 0.0 3.367778697655221e-18" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftFlexCarp_LFA" type="fixed">
+    <parent link="LeftForeArm"/>
+    <child link="FlexCarp_LFA"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="-0.0275 0.0 3.367778697655221e-18" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftFlexCarp_LH" type="fixed">
+    <parent link="LeftHand"/>
+    <child link="FlexCarp_LH"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0144 0.09179999999999999 0.0125" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftExtCarp_LFA" type="fixed">
+    <parent link="LeftForeArm"/>
+    <child link="ExtCarp_LFA"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="-0.0275 0.0 3.367778697655221e-18" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftExtCarp_LH" type="fixed">
+    <parent link="LeftHand"/>
+    <child link="ExtCarp_LH"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0144 0.09179999999999999 -0.025" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightRecAbd_RUT" type="fixed">
+    <parent link="UpperTrunk"/>
+    <child link="RecAbd_RUT"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0875 -0.07338333333333334 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightRecAbd_RP" type="fixed">
+    <parent link="Pelvis"/>
+    <child link="RecAbd_RP"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0875 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightErSpin_RUT" type="fixed">
+    <parent link="UpperTrunk"/>
+    <child link="ErSpin_RUT"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="-0.0875 -0.07338333333333334 0.187" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jRightErSpin_RP" type="fixed">
+    <parent link="Pelvis"/>
+    <child link="ErSpin_RP"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="-0.0875 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftRecAbd_LUT" type="fixed">
+    <parent link="UpperTrunk"/>
+    <child link="RecAbd_LUT"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0875 0.07338333333333334 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftRecAbd_LP" type="fixed">
+    <parent link="Pelvis"/>
+    <child link="RecAbd_LP"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftErSpin_LUT" type="fixed">
+    <parent link="UpperTrunk"/>
+    <child link="ErSpin_LUT"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="-0.0875 0.07338333333333334 0.187" rpy="0.0 0.0 0.0"/>
+  </joint>
+  <joint name="jLeftErSpin_LP" type="fixed">
+    <parent link="Pelvis"/>
+    <child link="ErSpin_LP"/>
+    <axis xyz="1. 0. 0."/>
+    <origin xyz="-0.0875 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+
+</robot>
