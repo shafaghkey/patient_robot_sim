@@ -56,14 +56,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://iiwa7/visual/link_0.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/visual/link_0.stl"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://iiwa7/collision/link_0.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/collision/link_0.stl"/>
       </geometry>
     </collision>
     <self_collision_checking>
@@ -92,14 +92,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0075"/>
       <geometry>
-        <mesh filename="package://iiwa7/visual/link_1.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/visual/link_1.stl"/>
       </geometry>
       <material name="Orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.0075"/>
       <geometry>
-        <mesh filename="package://iiwa7/collision/link_1.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/collision/link_1.stl"/>
       </geometry>
     </collision>
   </link>
@@ -121,14 +121,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.0060"/>
       <geometry>
-        <mesh filename="package://iiwa7/visual/link_2.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/visual/link_2.stl"/>
       </geometry>
       <material name="Orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.0060"/>
       <geometry>
-        <mesh filename="package://iiwa7/collision/link_2.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/collision/link_2.stl"/>
       </geometry>
     </collision>
   </link>
@@ -150,14 +150,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 -0.005 -0.026"/>
       <geometry>
-        <mesh filename="package://iiwa7/visual/link_3.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/visual/link_3.stl"/>
       </geometry>
       <material name="Orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 -0.005 -0.026"/>
       <geometry>
-        <mesh filename="package://iiwa7/collision/link_3.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/collision/link_3.stl"/>
       </geometry>
     </collision>
   </link>
@@ -179,14 +179,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://iiwa7/visual/link_4.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/visual/link_4.stl"/>
       </geometry>
       <material name="Orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://iiwa7/collision/link_4.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/collision/link_4.stl"/>
       </geometry>
     </collision>
   </link>
@@ -208,14 +208,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.026"/>
       <geometry>
-        <mesh filename="package://iiwa7/visual/link_5.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/visual/link_5.stl"/>
       </geometry>
       <material name="Orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.026"/>
       <geometry>
-        <mesh filename="package://iiwa7/collision/link_5.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/collision/link_5.stl"/>
       </geometry>
       <material name="Orange"/>
     </collision>
@@ -238,14 +238,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://iiwa7/visual/link_6.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/visual/link_6.stl"/>
       </geometry>
       <material name="Orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://iiwa7/collision/link_6.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/collision/link_6.stl"/>
       </geometry>
       <material name="Orange"/>
     </collision>
@@ -268,14 +268,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 -0.0005"/>
       <geometry>
-        <mesh filename="package://iiwa7/visual/link_7.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/visual/link_7.stl"/>
       </geometry>
       <material name="Grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.0005"/>
       <geometry>
-        <mesh filename="package://iiwa7/collision/link_7.stl"/>
+        <mesh filename="package://patient_robot_sim/agents/iiwa7/collision/link_7.stl"/>
       </geometry>
       <material name="Grey"/>
     </collision>
@@ -303,7 +303,7 @@
     </inertial>
     <visual name="RightForeArm">
       <geometry>
-        <mesh filename="package://human-gazebo/meshes/RightForeArm.stl" scale="0.61111111 0.61111111 1.03030303"/>
+        <mesh filename="package://patient_robot_sim/agents/human-gazebo/meshes/RightForeArm.stl" scale="0.61111111 0.61111111 1.03030303"/>
       </geometry>
       <material name="Link">
         <color rgba="0.9922 0.8667 0.7922 1.    "/>
@@ -312,7 +312,7 @@
     </visual>
     <visual name="RightFlexCarp">
       <geometry>
-        <mesh filename="package://human-gazebo/meshes/RightFlexCarp.stl" scale="0.61111111 0.61111111 1.03030303"/>
+        <mesh filename="package://patient_robot_sim/agents/human-gazebo/meshes/RightFlexCarp.stl" scale="0.61111111 0.61111111 1.03030303"/>
       </geometry>
       <material name="muscle">
         <color rgba="0.9922 0.8667 0.7922 1.    "/>
@@ -321,7 +321,7 @@
     </visual>
     <visual name="RightExtCarp">
       <geometry>
-        <mesh filename="package://human-gazebo/meshes/RightExtCarp.stl" scale="0.61111111 0.61111111 1.03030303"/>
+        <mesh filename="package://patient_robot_sim/agents/human-gazebo/meshes/RightExtCarp.stl" scale="0.61111111 0.61111111 1.03030303"/>
       </geometry>
       <material name="muscle">
         <color rgba="0.9922 0.8667 0.7922 1.    "/>
@@ -350,7 +350,7 @@
     </inertial>
     <visual name="RightHand">
       <geometry>
-        <mesh filename="package://human-gazebo/meshes/RightHand.stl" scale="0.9        1.03030303 0.55555556"/>
+        <mesh filename="package://patient_robot_sim/agents/human-gazebo/meshes/RightHand.stl" scale="0.9        1.03030303 0.55555556"/>
       </geometry>
       <material name="Link">
         <color rgba="0.9922 0.8667 0.7922 1.    "/>

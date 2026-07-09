@@ -40,14 +40,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//visual/link_0.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//visual/link_0.stl" />
       </geometry>
       <material name="Grey" />
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//collision/link_0.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//collision/link_0.stl" />
       </geometry>
     </collision>
     <self_collision_checking>
@@ -75,14 +75,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//visual/link_1.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//visual/link_1.stl" />
       </geometry>
       <material name="Orange" />
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//collision/link_1.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//collision/link_1.stl" />
       </geometry>
     </collision>
   </link>
@@ -105,14 +105,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//visual/link_2.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//visual/link_2.stl" />
       </geometry>
       <material name="Orange" />
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//collision/link_2.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//collision/link_2.stl" />
       </geometry>
     </collision>
   </link>
@@ -134,14 +134,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//visual/link_3.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//visual/link_3.stl" />
       </geometry>
       <material name="Orange" />
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//collision/link_3.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//collision/link_3.stl" />
       </geometry>
     </collision>
   </link>
@@ -163,14 +163,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//visual/link_4.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//visual/link_4.stl" />
       </geometry>
       <material name="Orange" />
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//collision/link_4.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//collision/link_4.stl" />
       </geometry>
     </collision>
   </link>
@@ -192,14 +192,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//visual/link_5.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//visual/link_5.stl" />
       </geometry>
       <material name="Orange" />
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//collision/link_5.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//collision/link_5.stl" />
       </geometry>
     </collision>
   </link>
@@ -221,14 +221,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//visual/link_6.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//visual/link_6.stl" />
       </geometry>
       <material name="Orange" />
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//collision/link_6.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//collision/link_6.stl" />
       </geometry>
     </collision>
   </link>
@@ -250,14 +250,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//visual/link_7.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//visual/link_7.stl" />
       </geometry>
       <material name="Grey" />
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://iiwa14/meshes//collision/link_7.stl" />
+        <mesh filename="package://patient_robot_sim/agents/iiwa14/meshes//collision/link_7.stl" />
       </geometry>
     </collision>
   </link>
@@ -289,7 +289,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_base_link.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_base_link.dae" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="">
         <color rgba="0.1 0.1 0.1 1" />
@@ -298,7 +298,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_base_link.stl" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_base_link.stl" />
       </geometry>
     </collision>
   </link>
@@ -311,7 +311,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_outer_knuckle.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_outer_knuckle.dae" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -320,7 +320,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_85_outer_knuckle.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_85_outer_knuckle.dae" scale="0.001 0.001 0.001" />
       </geometry>
     </collision>
   </link>
@@ -333,7 +333,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_outer_finger.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_outer_finger.dae" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="">
         <color rgba="0.1 0.1 0.1 1" />
@@ -342,7 +342,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_85_outer_finger.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_85_outer_finger.dae" scale="0.001 0.001 0.001" />
       </geometry>
     </collision>
   </link>
@@ -364,7 +364,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_inner_knuckle.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_inner_knuckle.dae" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="">
         <color rgba="0.1 0.1 0.1 1" />
@@ -373,7 +373,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_85_inner_knuckle.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_85_inner_knuckle.dae" scale="0.001 0.001 0.001" />
       </geometry>
     </collision>
   </link>
@@ -386,7 +386,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_outer_knuckle.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_outer_knuckle.dae" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="">
         <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
@@ -395,7 +395,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_85_outer_knuckle.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_85_outer_knuckle.dae" scale="0.001 0.001 0.001" />
       </geometry>
     </collision>
   </link>
@@ -408,7 +408,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_outer_finger.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_outer_finger.dae" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="">
         <color rgba="0.1 0.1 0.1 1" />
@@ -417,7 +417,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_85_outer_finger.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_85_outer_finger.dae" scale="0.001 0.001 0.001" />
       </geometry>
     </collision>
   </link>
@@ -439,7 +439,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_inner_knuckle.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/visual/robotiq_arg2f_85_inner_knuckle.dae" scale="0.001 0.001 0.001" />
       </geometry>
       <material name="">
         <color rgba="0.1 0.1 0.1 1" />
@@ -448,7 +448,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_85_inner_knuckle.dae" scale="0.001 0.001 0.001" />
+        <mesh filename="package://patient_robot_sim/agents/robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_85_inner_knuckle.dae" scale="0.001 0.001 0.001" />
       </geometry>
     </collision>
   </link>
@@ -683,7 +683,7 @@
     <visual>
       <origin xyz="0 -0.0179011 0.00651548" rpy="-3.14159 -1.5708 0" />
       <geometry>
-        <mesh filename="package://assets/c_049_distale_distale.stl" />
+        <mesh filename="package://patient_robot_sim/agents/assets/c_049_distale_distale.stl" />
       </geometry>
       <material name="c_049_distale_distale_material">
         <color rgba="0.301961 0.301961 0.301961 1" />
@@ -692,7 +692,7 @@
     <collision>
       <origin xyz="0 -0.0179011 0.00651548" rpy="-3.14159 -1.5708 0" />
       <geometry>
-        <mesh filename="package://assets/c_049_distale_distale.stl" />
+        <mesh filename="package://patient_robot_sim/agents/assets/c_049_distale_distale.stl" />
       </geometry>
     </collision>
   </link>
@@ -705,7 +705,7 @@
     <visual>
       <origin xyz="-0.0036 0 0" rpy="-3.14159 -0 0" />
       <geometry>
-        <mesh filename="package://assets/part_1_new.stl" />
+        <mesh filename="package://patient_robot_sim/agents/assets/part_1_new.stl" />
       </geometry>
       <material name="part_1_material">
         <color rgba="0.917647 0.917647 0.917647 1" />
@@ -714,7 +714,7 @@
     <collision>
       <origin xyz="-0.0036 0 0" rpy="-3.14159 -0 0" />
       <geometry>
-        <mesh filename="package://assets/part_1_new.stl" />
+        <mesh filename="package://patient_robot_sim/agents/assets/part_1_new.stl" />
       </geometry>
     </collision>
   </link>
@@ -727,7 +727,7 @@
     <visual>
       <origin xyz="-0.022675 0 5e-06" rpy="-1.5708 -1.5708 0" />
       <geometry>
-        <mesh filename="package://assets/xela.stl" />
+        <mesh filename="package://patient_robot_sim/agents/assets/xela.stl" />
       </geometry>
       <material name="xela_material">
         <color rgba="0.301961 0.301961 0.301961 1" />
@@ -736,7 +736,7 @@
     <collision>
       <origin xyz="-0.022675 0 5e-06" rpy="-1.5708 -1.5708 0" />
       <geometry>
-        <mesh filename="package://assets/xela.stl" />
+        <mesh filename="package://patient_robot_sim/agents/assets/xela.stl" />
       </geometry>
     </collision>
   </link>
@@ -1056,7 +1056,7 @@
     <visual>
       <origin xyz="0 -0.0179011 0.00651548" rpy="-3.14159 -1.5708 0" />
       <geometry>
-        <mesh filename="package://assets/c_049_distale_distale.stl" />
+        <mesh filename="package://patient_robot_sim/agents/assets/c_049_distale_distale.stl" />
       </geometry>
       <material name="c_049_distale_distale_material">
         <color rgba="0.301961 0.301961 0.301961 1" />
@@ -1065,7 +1065,7 @@
     <collision>
       <origin xyz="0 -0.0179011 0.00651548" rpy="-3.14159 -1.5708 0" />
       <geometry>
-        <mesh filename="package://assets/c_049_distale_distale.stl" />
+        <mesh filename="package://patient_robot_sim/agents/assets/c_049_distale_distale.stl" />
       </geometry>
     </collision>
   </link>
@@ -1078,7 +1078,7 @@
     <visual>
       <origin xyz="-0.0036 0 0" rpy="-3.14159 -0 0" />
       <geometry>
-        <mesh filename="package://assets/part_1_new.stl" />
+        <mesh filename="package://patient_robot_sim/agents/assets/part_1_new.stl" />
       </geometry>
       <material name="part_1_material">
         <color rgba="0.917647 0.917647 0.917647 1" />
@@ -1087,7 +1087,7 @@
     <collision>
       <origin xyz="-0.0036 0 0" rpy="-3.14159 -0 0" />
       <geometry>
-        <mesh filename="package://assets/part_1_new.stl" />
+        <mesh filename="package://patient_robot_sim/agents/assets/part_1_new.stl" />
       </geometry>
     </collision>
   </link>
@@ -1100,7 +1100,7 @@
     <visual>
       <origin xyz="-0.022675 0 5e-06" rpy="-1.5708 -1.5708 0" />
       <geometry>
-        <mesh filename="package://assets/xela.stl" />
+        <mesh filename="package://patient_robot_sim/agents/assets/xela.stl" />
       </geometry>
       <material name="xela_material">
         <color rgba="0.301961 0.301961 0.301961 1" />
@@ -1109,7 +1109,7 @@
     <collision>
       <origin xyz="-0.022675 0 5e-06" rpy="-1.5708 -1.5708 0" />
       <geometry>
-        <mesh filename="package://assets/xela.stl" />
+        <mesh filename="package://patient_robot_sim/agents/assets/xela.stl" />
       </geometry>
     </collision>
   </link>

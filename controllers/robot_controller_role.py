@@ -23,7 +23,7 @@ class RobotGripper:
         self.arm_joints = arm_joints
         self.gripper_joints = gripper_joints  
         self.ee_index = EE_index
-        # self.env = env  # store shared env (PyBulletEnv or None)
+        self.env = env  # store shared env (PyBulletEnv or None)
         if env is not None:
             self.time_step = env.time_step
         else: 
@@ -32,13 +32,14 @@ class RobotGripper:
     def load(self, base_pose=(0,0,0,0,0,0,1), use_fixed_base=True):
         base_pos, base_quat = base_pose[:3], base_pose[3:7]
         # Use shared connection (assumes env.connect() already called)
-        if env is not None:
-            self.robot_id = env.load_urdf(f"{self.robot_name}.urdf", base_pos, base_quat, use_fixed_base=use_fixed_base)
+        if self.env is not None:
+            self.robot_id = self.env.load_urdf(f"{self.robot_name}.urdf", base_pos, base_quat, use_fixed_base=use_fixed_base)
         else:
-            pb.connect(pb.GUI)
-            pb.setAdditionalSearchPath(pybullet_data.getDataPath())
-            pb.setTimeStep(self.time_step)
-            pb.setGravity(0,0,-9.81)
+            if not pb.isConnected():
+                pb.connect(pb.GUI)
+                pb.setAdditionalSearchPath(pybullet_data.getDataPath())
+                pb.setTimeStep(self.time_step)
+                pb.setGravity(0,0,-9.81)
             urdf_file = asset_path(f"{self.robot_name}.urdf")
             self.robot_id = pb.loadURDF(urdf_file, basePosition=base_pos, baseOrientation=base_quat,
                                     useFixedBase=use_fixed_base, flags=pb.URDF_USE_INERTIA_FROM_FILE)

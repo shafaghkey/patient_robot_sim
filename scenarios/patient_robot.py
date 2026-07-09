@@ -6,13 +6,16 @@ import numpy as np
 from math import pi
 from scipy.spatial.transform import Rotation as R
 import time
-
+import os, sys
+_PKG_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _PKG_ROOT not in sys.path:
+    sys.path.insert(0, _PKG_ROOT)
 from utils.util_functions import *
 from utils.util_human_rom import *
 from utils.util_visualization_GUI import *
 
-from robot_nogripper_controller import Robot
-from robot_controller import RobotGripper
+from controllers.robot_nogripper_controller import Robot
+from controllers.robot_controller import RobotGripper
 
 import threading
 from pybullet_utils.bullet_client import BulletClient

@@ -6,7 +6,10 @@ import numpy as np
 from math import pi
 from scipy.spatial.transform import Rotation as R
 import time
-import os
+import os, sys
+_PKG_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _PKG_ROOT not in sys.path:
+    sys.path.insert(0, _PKG_ROOT)
 from utils.util_functions import *
 from utils.util_human_rom import *
 from utils.util_visualization_GUI import *

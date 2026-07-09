@@ -21,7 +21,7 @@ import pybullet_data
 
 # ---------- Path discovery ----------
 _THIS_FILE = os.path.abspath(__file__)
-PKG_ROOT = os.path.dirname(_THIS_FILE)
+PKG_ROOT = os.path.dirname(os.path.dirname(_THIS_FILE))
 
 _CANDIDATES = [
     os.path.join(PKG_ROOT, "agents"),
@@ -46,18 +46,18 @@ def assert_file(path, label="file"):
     return path
 
 def configure_pybullet_search_paths(extra_dirs=None, verbose=False):
-    pb.setAdditionalSearchPath(pybullet_data.getDataPath())
+    # pb.setAdditionalSearchPath keeps only the single most-recently-set path (it does not
+    # accumulate a list), so bare-filename loads (e.g. "plane.urdf") need pybullet_data's path
+    # to be the last call here. Callers reach agents/objects assets via asset_path()/object_path(),
+    # which already return absolute paths and don't depend on this search path at all.
     for d in (AGENTS_DIR, OBJECTS_DIR):
-        if os.path.isdir(d):
-            pb.setAdditionalSearchPath(d)
-        elif verbose:
+        if not os.path.isdir(d) and verbose:
             print(f"[WARN] Missing dir: {d}")
     if extra_dirs:
         for d in extra_dirs:
-            if os.path.isdir(d):
-                pb.setAdditionalSearchPath(d)
-            elif verbose:
+            if not os.path.isdir(d) and verbose:
                 print(f"[WARN] Extra missing: {d}")
+    pb.setAdditionalSearchPath(pybullet_data.getDataPath())
     if verbose:
         print(f"[INFO] Search paths set. AGENTS_DIR={AGENTS_DIR}")
 

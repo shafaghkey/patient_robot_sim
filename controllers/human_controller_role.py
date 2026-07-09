@@ -31,13 +31,14 @@ class Human:
     def load(self, base_pose=(0,0,0,0,0,0,1), use_fixed_base=True):
         base_pos, base_quat = base_pose[:3], base_pose[3:7]
         # Use shared connection (assumes env.connect() already called)
-        if env is not None:
-            self.robot_id = env.load_urdf(f"{self.robot_name}.urdf", base_pos, base_quat, use_fixed_base=use_fixed_base)
+        if self.env is not None:
+            self.robot_id = self.env.load_urdf(f"{self.robot_name}.urdf", base_pos, base_quat, use_fixed_base=use_fixed_base)
         else:
-            p.connect(p.GUI)
-            p.setAdditionalSearchPath(pybullet_data.getDataPath())
-            p.setTimeStep(self.time_step)
-            p.setGravity(0,0,-9.81)
+            if not p.isConnected():
+                p.connect(p.GUI)
+                p.setAdditionalSearchPath(pybullet_data.getDataPath())
+                p.setTimeStep(self.time_step)
+                p.setGravity(0,0,-9.81)
             urdf_file = asset_path(f"{self.robot_name}.urdf")
             self.robot_id = p.loadURDF(urdf_file, basePosition=base_pos, baseOrientation=base_quat,
                                     useFixedBase=use_fixed_base)    #, flags=p.URDF_USE_INERTIA_FROM_FILE)

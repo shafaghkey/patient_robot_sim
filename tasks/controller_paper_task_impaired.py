@@ -72,7 +72,7 @@ kuka_base=[0.1, -1.05, 0.4, 0, 0, 0.707, 0.707]
 table_kuka = pb.loadURDF(asset_path("table_kuka_seated.urdf"), [kuka_base[0], kuka_base[1], 0], useFixedBase=True)
 
 arm_joints, gripper_joints, EE_index = list(range(1, 8)), [10, 12, 14, 15, 17, 19], 8        # Robotiq_gripper
-robot = RobotGripper(robot_name='iiwa14_gripper', arm_joints=arm_joints, gripper_joints=gripper_joints, EE_index=EE_index, time_step=time_step)
+robot = RobotGripper(robot_name='iiwa14_gripper', arm_joints=arm_joints, gripper_joints=gripper_joints, EE_index=EE_index)
 # robot = Robot(robot_name='iiwa14_gripper', arm_joints = list(range(1,8)), time_step=time_step)
 robot.load(base_pose=kuka_base) 
 robot_q_init = [-0.5, 0.52359878, 0, -1.58824962,  0, 0, pi]
@@ -90,7 +90,7 @@ kuka_damping_eigval = [100.0, 200.0, 200.0, 10., 10., 10]
 # Human
 human = Human(robot_name='human_gazebo_shkey', controllable_joints = list(range(6, 14)), time_step=time_step)
 human.load(base_pose=[0, 0, 0.5, 0, 0, 0, 1])
-home_config = [0.0] * pb.getNumJoints(human.robot)  # Initialize all joints to 0
+home_config = [0.0] * pb.getNumJoints(human.robot_id)  # Initialize all joints to 0
 home_config[23] = -1.3  # Left shoulder_rotx joint to -1.3 radians
 home_config[49] = -pi/2  # Right Hip
 home_config[68] = -pi/2  # Left Hip
@@ -116,41 +116,41 @@ if human_impairment_method == 'ROM':
     human_rom = human_ROM_4d(subject=1, impaired_arm="R")
     human_rom.train_svm_model(scaled=False)
 elif human_impairment_method == 'joint_limits':
-    pb.changeDynamics(human.robot, 6, jointLowerLimit=-0.9, jointUpperLimit= 0.4)
-    pb.changeDynamics(human.robot, 7, jointLowerLimit=-1.8, jointUpperLimit=-0.9)
+    pb.changeDynamics(human.robot_id, 6, jointLowerLimit=-0.9, jointUpperLimit= 0.4)
+    pb.changeDynamics(human.robot_id, 7, jointLowerLimit=-1.8, jointUpperLimit=-0.9)
 elif human_impairment_method == 'mid_pose':      # Set a different target to simulate joint limits 
     human_desired_pose[:3] = human_desired_pose[:3] + [-0.1, 0, -0.05] 
 else:
     raise ValueError(f"Unknown impairment method: {human_impairment_method}")
 
 # for turning off link and joint damping
-for link_idx in range(pb.getNumJoints(robot.robot)+1):
-    pb.changeDynamics(robot.robot, link_idx, linearDamping=0.0, angularDamping=0.0, jointDamping=0.0)
-    pb.changeDynamics(robot.robot, link_idx, maxJointVelocity=200)
+for link_idx in range(pb.getNumJoints(robot.robot_id)+1):
+    pb.changeDynamics(robot.robot_id, link_idx, linearDamping=0.0, angularDamping=0.0, jointDamping=0.0)
+    pb.changeDynamics(robot.robot_id, link_idx, maxJointVelocity=200)
     if link_idx in robot.gripper_joints:
-        pb.changeDynamics(robot.robot, link_idx, maxJointVelocity=0.1)
+        pb.changeDynamics(robot.robot_id, link_idx, maxJointVelocity=0.1)
 
-for link_idx in range(pb.getNumJoints(human.robot)+1):
-    pb.changeDynamics(human.robot, link_idx, linearDamping=0.0, angularDamping=0.0, jointDamping=0.0)
-    pb.changeDynamics(human.robot, link_idx, maxJointVelocity=200)
+for link_idx in range(pb.getNumJoints(human.robot_id)+1):
+    pb.changeDynamics(human.robot_id, link_idx, linearDamping=0.0, angularDamping=0.0, jointDamping=0.0)
+    pb.changeDynamics(human.robot_id, link_idx, maxJointVelocity=200)
 
 # Enable torque control
-pb.setJointMotorControlArray(robot.robot, robot.arm_joints,
+pb.setJointMotorControlArray(robot.robot_id, robot.arm_joints,
                             pb.VELOCITY_CONTROL, 
                             forces=np.zeros(len(robot.arm_joints)))
 
-pb.setJointMotorControlArray(robot.robot, robot.gripper_joints,
+pb.setJointMotorControlArray(robot.robot_id, robot.gripper_joints,
                             pb.VELOCITY_CONTROL,
                             forces=np.zeros(len(robot.gripper_joints)))
 
-pb.setJointMotorControlArray(human.robot, human.controllable_joints,
+pb.setJointMotorControlArray(human.robot_id, human.controllable_joints,
                             pb.VELOCITY_CONTROL, 
                             forces=np.zeros(len(human.controllable_joints)))
  
 
-pb.setCollisionFilterPair(human.robot, cup, -1, -1, enableCollision=1)           # Enable collision between cup and human
-pb.setCollisionFilterPair(robot.robot, human.robot, -1, -1, enableCollision=0)   # Disable initial robot-human interaction
-pb.setCollisionFilterPair(human.robot, human.robot, -1, -1, enableCollision=0)   # Disable collision between agents
+pb.setCollisionFilterPair(human.robot_id, cup, -1, -1, enableCollision=1)           # Enable collision between cup and human
+pb.setCollisionFilterPair(robot.robot_id, human.robot_id, -1, -1, enableCollision=0)   # Disable initial robot-human interaction
+pb.setCollisionFilterPair(human.robot_id, human.robot_id, -1, -1, enableCollision=0)   # Disable collision between agents
 
 # Phase control variables
 phase = "observe"
@@ -168,7 +168,7 @@ CONTACT_THRESHOLD = 20  # Iterations to switch to assist phase
 TASK_THRESHOLD = 20     # Iterations to consider task as done
 
 # robot_desired_pose = Initial pose of the robot end-effector
-robot_ee_state = pb.getLinkState(robot.robot, robot.ee_index)  
+robot_ee_state = pb.getLinkState(robot.robot_id, robot.ee_index)  
 robot_initial_pose = list(robot_ee_state[0]) + list(pb.getEulerFromQuaternion(robot_ee_state[1])) 
 
 F_ext, F_ext_point = None, None  
@@ -188,11 +188,11 @@ while True:
     # cup_to_handle_pos, cup_to_handle_quat = [0.0, -0.055, 0.07], [0.0, -0.707, 0.0, 0.707]        # Cup-to-handle transform
     # target_pose = pb.multiplyTransforms(cup_pos, cup_quat, cup_to_handle_pos, cup_to_handle_quat)  # Desired pose of the human end-effector
 
-    human_ee_state = pb.getLinkState(human.robot, human.ee_index)  # (pos, quat) -> indices 0,1
+    human_ee_state = pb.getLinkState(human.robot_id, human.ee_index)  # (pos, quat) -> indices 0,1
     human_ee_pos = list(human_ee_state[0])
     human_ee_quat = list(human_ee_state[1])
-    human_poc_pose = get_poc_pose(human.robot)  # Expect [x,y,z,qx,qy,qz,qw]
-    robot_ee_state = pb.getLinkState(robot.robot, robot.ee_index)
+    human_poc_pose = get_poc_pose(human.robot_id)  # Expect [x,y,z,qx,qy,qz,qw]
+    robot_ee_state = pb.getLinkState(robot.robot_id, robot.ee_index)
     robot_ee_pos = list(robot_ee_state[0])
     robot_ee_quat = list(robot_ee_state[1])
 
@@ -206,12 +206,12 @@ while True:
     robot_poc_err = list(robot_poc_err_pos) + list(robot_poc_err_quat_vec)
 
     if np.linalg.norm(human_target_err_pos) < 1e-3 and np.linalg.norm(human_target_err_quat_vec) < 1e-2:
-        cup_contacts = pb.getContactPoints(cup, human.robot)
+        cup_contacts = pb.getContactPoints(cup, human.robot_id)
         if cup_contacts:
             for c in cup_contacts:
                 draw_contact_point(c[5], radius=0.05, color=[0, 1, 0], life_time=0.1)
         
-    contacts = pb.getContactPoints(robot.robot, human.robot)
+    contacts = pb.getContactPoints(robot.robot_id, human.robot_id)
     if contacts:
         for c in contacts:
             draw_contact_point(c[5], radius=0.01, color=[1, 0, 0], life_time=0.1)  # Draw contact point in red 
@@ -241,8 +241,8 @@ while True:
                 print(f"OBSERVE --- stuck_counter+ = {human_stuck_counter}... Human not moving... Movement = {1e3 * movement_lin:.2f}mm, {movement_ang*180/pi:.2f}deg")
                 # # Check joint limits or ROM constraints
                 # joint_pos = human.get_joint_states()[0]  # current joint positions
-                # joint_info = [pb.getJointInfo(human.robot, j) for j in human.controllable_joints]
-                # limits = [pb.getJointInfo(human.robot, j)[8:10] for j in human.controllable_joints if pb.getJointInfo(human.robot, j)[2] != pb.JOINT_FIXED]
+                # joint_info = [pb.getJointInfo(human.robot_id, j) for j in human.controllable_joints]
+                # limits = [pb.getJointInfo(human.robot_id, j)[8:10] for j in human.controllable_joints if pb.getJointInfo(human.robot_id, j)[2] != pb.JOINT_FIXED]
                 # at_limit = any(pos <= low+0.01 or pos >= upp-0.01 
                 #             for (low, upp), pos in zip(limits, joint_pos))
                 # # Gamma = rom_r.calc_Gamma(joint_pos)
@@ -298,7 +298,7 @@ while True:
             human_poc_pose_mid = human_poc_pose
             kuka_k_lin, kuka_k_ang = 20, 5
             if np.linalg.norm(robot_poc_err_pos) < 0.03 and np.linalg.norm(robot_poc_err_quat_vec) < 0.12:
-                pb.setCollisionFilterPair(robot.robot, human.robot, -1, -1, enableCollision=1)
+                pb.setCollisionFilterPair(robot.robot_id, human.robot_id, -1, -1, enableCollision=1)
                 reach_counter += 1
                 print(f"APPROACH -- reach_counter+ = {reach_counter}... Robot close to human forearm: {1e3 * np.linalg.norm(robot_poc_err_pos):.2f}mm, {np.linalg.norm(robot_poc_err_quat_vec):.3f}")
             else:
@@ -309,18 +309,18 @@ while True:
         if reach_counter > REACH_THRESHOLD/2:
             print("APPROACH -- Robot reached human forearm! Transitioning to grasp phase.")
             tau_gripper = np.array([1.2, 0.2, 0.1, 1.2, 0.2, 0.1])
-            # pb.setJointMotorControlArray(robot.robot, robot.gripper_joints,
+            # pb.setJointMotorControlArray(robot.robot_id, robot.gripper_joints,
             #                 pb.VELOCITY_CONTROL,
             #                 forces=np.zeros(len(robot.gripper_joints)))
 
             if reach_counter >= REACH_THRESHOLD:
                 phase = "grasp"
                 reach_counter = 0
-                # pb.setCollisionFilterPair(robot.robot, human.robot, -1, -1, enableCollision=1) 
+                # pb.setCollisionFilterPair(robot.robot_id, human.robot_id, -1, -1, enableCollision=1) 
                 # Increase contact stiffness for better force transfer
-                # for body in [robot.robot, human.robot]:
-                pb.changeDynamics(human.robot, -1, contactStiffness=2e5, contactDamping=1.0)
-                pb.changeDynamics(human.robot, -1, lateralFriction=1.0, spinningFriction=0.1, rollingFriction=0.1)
+                # for body in [robot.robot_id, human.robot_id]:
+                pb.changeDynamics(human.robot_id, -1, contactStiffness=2e5, contactDamping=1.0)
+                pb.changeDynamics(human.robot_id, -1, lateralFriction=1.0, spinningFriction=0.1, rollingFriction=0.1)
                 
 
     elif phase == "grasp":
@@ -333,7 +333,7 @@ while True:
             print(f"GRASP ----- lose_contact_counter = {lose_contact_counter}... No contact detected.")
             if lose_contact_counter >= CONTACT_THRESHOLD:
                 print("GRASP ----- Contact lost! Transitioning to approach phase.")
-                # pb.setCollisionFilterPair(robot.robot, human.robot, -1, -1, enableCollision=0)
+                # pb.setCollisionFilterPair(robot.robot_id, human.robot_id, -1, -1, enableCollision=0)
                 phase = "approach"
                 lose_contact_counter = 0
                 contact_counter = 0
@@ -341,7 +341,7 @@ while True:
         else:
             lose_contact_counter = max(0, lose_contact_counter-1)  
             # # Print contact details
-            # gripper_joint_states = pb.getJointStates(robot.robot, robot.gripper_joints)
+            # gripper_joint_states = pb.getJointStates(robot.robot_id, robot.gripper_joints)
             # gripper_joint_positions = [state[0] for state in gripper_joint_states]
             # gripper_joint_torques = [state[3] for state in gripper_joint_states]
             print(f"GRASP ----- contact_counter = {contact_counter}: between: Robot={[c[3] for c in contacts]}, Human={[c[4] for c in contacts]} :::: Normal force: {contacts[0][9]:.2f}N")
@@ -380,7 +380,7 @@ while True:
             print(f"ASSIST ----- lose_contact_counter = {lose_contact_counter}... No contact detected.")
             if lose_contact_counter >= CONTACT_THRESHOLD:
                 print("ASSIST ----- Contact lost! Transitioning to approach phase.")
-                # pb.setCollisionFilterPair(robot.robot, human.robot, -1, -1, enableCollision=0)
+                # pb.setCollisionFilterPair(robot.robot_id, human.robot_id, -1, -1, enableCollision=0)
                 phase = "approach"
                 lose_contact_counter = 0
         else:
@@ -395,7 +395,7 @@ while True:
                 F_ext += F_ext_c  # Sum forces from all contact points
                 draw_contact_Force(F_ext_c, c[5], length=0.03, color=[0, 0, 0], life_time=0.2)  # Draw contact force in black
                 # print(f"Normal: {np.linalg.norm(F_ext):.2f}N, Latfriction1: {np.linalg.norm(lateral_friction1):.2f}N, Latfriction2: {np.linalg.norm(lateral_friction2):.2f}N")
-            F_ext_point = human_poc_pose[:3]    #pb.getLinkState(human.robot, 10)[0]
+            F_ext_point = human_poc_pose[:3]    #pb.getLinkState(human.robot_id, 10)[0]
             print(f"ASSIST ----- External force: {F_ext.round(2)}N, contact points: Robot={[c[3] for c in contacts]}")    
             # at {np.array(F_ext_point).round(2)}m")
             
@@ -417,7 +417,7 @@ while True:
         tau_rom[:4] = human_rom.enforce_ROM_tau(q[:4]) #* 1e2
         tau_human += tau_rom  # Add ROM torque to human control
 
-    pb.setJointMotorControlArray(human.robot, human.controllable_joints,
+    pb.setJointMotorControlArray(human.robot_id, human.controllable_joints,
                                 controlMode = pb.TORQUE_CONTROL, 
                                 forces = tau_human,
                                 positionGains=[0]*len(human.controllable_joints),   # Critical for torque mode
@@ -430,7 +430,7 @@ while True:
                                  F_ext=F_ext if F_ext is not None else None, F_ext_point=F_ext_point
                                  )  
     
-    pb.setJointMotorControlArray(robot.robot, robot.arm_joints,
+    pb.setJointMotorControlArray(robot.robot_id, robot.arm_joints,
                                controlMode=pb.TORQUE_CONTROL, 
                                forces=tau_robot,
                                positionGains=[0]*len(robot.arm_joints),    # Critical for torque mode
@@ -442,7 +442,7 @@ while True:
     G_q_gripper = np.array(robot.get_gripper_gravity_trq())
     tau_gripper += G_q_gripper 
     # print(f"tau_gripper (with gravity compensation): {tau_gripper.round(2)}")
-    pb.setJointMotorControlArray(robot.robot, robot.gripper_joints,
+    pb.setJointMotorControlArray(robot.robot_id, robot.gripper_joints,
                                 controlMode=pb.TORQUE_CONTROL, 
                                 forces=tau_gripper,
                                 positionGains=[0]*len(robot.gripper_joints),  # Critical for torque mode
@@ -485,30 +485,30 @@ while True:
 # # preshapeing the grasping pose: coupling reaching and grasping for the robot
 
     # # Enable collision between agents
-    # # pb.setCollisionFilterPair(robot.robot, human.robot, -1, -1, enableCollision=1)  # -1 = all links
+    # # pb.setCollisionFilterPair(robot.robot_id, human.robot_id, -1, -1, enableCollision=1)  # -1 = all links
     # for robot_link in range(robot.ee_index-3, robot.ee_index):
     #     for human_link in range(human.ee_index-5, human.ee_index):
-    #         pb.setCollisionFilterPair(robot.robot, human.robot, 
+    #         pb.setCollisionFilterPair(robot.robot_id, human.robot_id, 
     #                                     robot_link, human_link, 
     #                                     enableCollision=1,
     #                                     )
 
 # Initially disable interaction forces between agents
-# pb.changeDynamics(human.robot, -1,
+# pb.changeDynamics(human.robot_id, -1,
 #                 contactStiffness=1e4,  # Responsive force generation
 #                 contactDamping=0.1,    # Minimal velocity damping
 #                 lateralFriction=0.5,   # Realistic sliding
 #                 contactProcessingThreshold=0,
 #                 frictionAnchor=0)      # Prevent pre-contact friction effects
-# pb.changeDynamics(human.robot, -1, frictionAnchor=1)  # frictionAnchor=1: Prevent sliding
-# pb.changeDynamics(human.robot, -1, contactStiffness=0, contactDamping=0)
+# pb.changeDynamics(human.robot_id, -1, frictionAnchor=1)  # frictionAnchor=1: Prevent sliding
+# pb.changeDynamics(human.robot_id, -1, contactStiffness=0, contactDamping=0)
 
 # pb.changeDynamics(cup, -1, contactStiffness=1e4, contactDamping=1e3, contactProcessingThreshold=0)  # Better collision resolution
 # # pb.changeDynamics(table_cup, -1, lateralFriction=1, spinningFriction=0.5, rollingFriction=0.5, frictionAnchor=1) # frictionAnchor=1: Prevent sliding
 # # pb.changeDynamics(table_cup, -1, contactStiffness=0.1, contactDamping=0.1, frictionAnchor=0)       # Prevent pre-contact friction effects
 
-# pb.setCollisionFilterPair(robot.robot, robot.robot, -1, -1, enableCollision=0)  # Disable self-collision
-# pb.setCollisionFilterPair(human.robot, human.robot, -1, -1, enableCollision=0)  # Disable self-collision
+# pb.setCollisionFilterPair(robot.robot_id, robot.robot_id, -1, -1, enableCollision=0)  # Disable self-collision
+# pb.setCollisionFilterPair(human.robot_id, human.robot_id, -1, -1, enableCollision=0)  # Disable self-collision
 
     # if phase == "grasp" or phase == "assist":
     #     tau_gripper = np.array([0.8, 0.1, 0.05, 0.8, 0.1, 0.05])  # Apply some force to the gripper joints
@@ -524,14 +524,14 @@ while True:
     # else:
     #     # tau_gripper = np.zeros(len(robot.gripper_joints))  # No force applied
     #     gripper_open_ratio = 1.0
-    # # # pb.setJointMotorControlArray(robot.robot, robot.gripper_joints,
+    # # # pb.setJointMotorControlArray(robot.robot_id, robot.gripper_joints,
     # # #                             controlMode=pb.POSITION_CONTROL, 
     # # #                             targetPositions=np.array(robot.gripper_upper_limits) * gripper_open_ratio,  
     # # #                             # positionGains=[0.05],    # Slow position control
     # # #                             positionGains=[1.0],     # Fast velocity control
     # # #                             # forces=[500],            # Apply force to close gripper
     # # #                             )
-    # # pb.setJointMotorControlArray(robot.robot, [10],
+    # # pb.setJointMotorControlArray(robot.robot_id, [10],
     # #                             controlMode=pb.TORQUE_CONTROL,
     # #                             forces=[-100],
     # #                             positionGains=[0],  # Critical for torque mode
