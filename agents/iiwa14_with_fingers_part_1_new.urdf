@@ -271,7 +271,7 @@
   <joint name="iiwa_joint_gripper" type="fixed">
     <parent link="iiwa_link_ee" />
     <child link="iiwa_link_gripper" />
-    <origin rpy="0 0 0" xyz="0 0 0.144" />
+    <origin rpy="0 0 0" xyz="0 0 0.180" />
   </joint>
   <link name="iiwa_link_gripper">
   </link>
